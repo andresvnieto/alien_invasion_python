@@ -7,7 +7,7 @@ class Settings:
         self.size_window = (1200, 800)
         self.colors = {
             "white": (255,255,255),
-            "dark": (15,21,42)
+            "dark": (36,37,86)
         }
         self.ship_speed = .5
         self.bullet_speed = 1.0
