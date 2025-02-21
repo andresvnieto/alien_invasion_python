@@ -1,11 +1,14 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
     def __init__(self, game):
+        super().__init__()
         #Initilize the hship and start position
         self.screen = game.screen
         self.screen_rect = game.screen.get_rect()
         self.settings = game.settings
+
 
         # Load the ship image and get its rect
         self.image = pygame.image.load('assets/space_ship.bmp')
@@ -28,6 +31,10 @@ class Ship:
         
         #Update x value
         self.rect.x = self.x 
+
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
